@@ -39,12 +39,16 @@ void AItem::Tick(float DeltaTime)
 
 	// Movement rate in units of cm/s
 	float MovementRate = 100.f;
+	float rotationRate = 45.f;
 
 	// MovementRate * DeltaTime | (cm/s) * (frames/s) = (cm/frame)
-	FVector offsetAdjustValue = FVector(MovementRate * DeltaTime, 0.f, 0.f);
+	FVector offsetAdjustValue = FVector(0.f, MovementRate * DeltaTime, 0.f);
 
 	AddActorWorldOffset(offsetAdjustValue);
+	AddActorWorldRotation(FRotator(0.f, 0.f, rotationRate * DeltaTime));
 	DRAW_SPHERE(GetActorLocation());
+	DRAW_VECTOR(GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 2.f, 1);
+	GEngine->AddOnScreenDebugMessage(1, 1.f, FColor::White, FString(GetActorRotation().ToString()));
 }
 
 

@@ -2,10 +2,8 @@
 
 
 #include "Items/Item.h"
-#include "DrawDebugHelpers.h"
-#include "IsoPractice/IsoPractice.h"
+#include "IsoPractice/DebugMacros.h"
 
-#define THIRTY 30
 
 
 // Sets default values
@@ -20,28 +18,34 @@ AItem::AItem()
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("BeginPlay in Item.cpp"));
-
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Red, FString("This is my debug in Item.cpp"));
-	}
+	UE_LOG(LogTemp, Warning, TEXT("BeginPlay in Item.cpp"))
+	
+	SetActorLocation(FVector(0.f, 0.f, 10.f));
 
 	FVector MyItemVector = GetActorLocation();
 	DRAW_SPHERE(MyItemVector)
-	
+	FVector MyForwardVector = GetActorForwardVector();
+	//DRAW_LINE(MyItemVector, MyForwardVector, 100.f)
+	//DRAW_POINT(MyItemVector + MyForwardVector * 100.f)
+	DRAW_VECTOR(MyItemVector, MyForwardVector, 100.f)
+
+
 }
 
 // Called every frame
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	UE_LOG(LogTemp, Warning, TEXT("DeltaTime=%f"), DeltaTime);
-	
-	if (GEngine) {
-		FString ItemName = GetName();
-		FString Message = FString::Printf(TEXT("ItemName=%s DeltaTime=%f"), *ItemName, DeltaTime);
-		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Blue, Message);
-	}
 
+	// Movement rate in units of cm/s
+	float MovementRate = 100.f;
+
+	// MovementRate * DeltaTime | (cm/s) * (frames/s) = (cm/frame)
+	FVector offsetAdjustValue = FVector(MovementRate * DeltaTime, 0.f, 0.f);
+
+	AddActorWorldOffset(offsetAdjustValue);
+	DRAW_SPHERE(GetActorLocation());
 }
+
+
 

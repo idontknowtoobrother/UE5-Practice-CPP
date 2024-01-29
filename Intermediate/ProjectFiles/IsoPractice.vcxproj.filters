@@ -57,4 +57,9 @@
       <Filter>Source\IsoPractice\Public\Items</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\IsoPractice\DebugMacros.h">
+      <Filter>Source\IsoPractice</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

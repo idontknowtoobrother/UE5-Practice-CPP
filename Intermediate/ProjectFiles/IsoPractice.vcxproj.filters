@@ -11,6 +11,9 @@
     <None Include="..\..\Source\IsoPracticeEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +32,9 @@
     <Filter Include="Source\IsoPractice">
       <UniqueIdentifier>{51A8DD38-851E-36C9-AC62-062E556C2F86}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\IsoPractice\DebugMacros.h">
+      <Filter>Source\IsoPractice</Filter>
+    </ClInclude>
     <None Include="..\..\Source\IsoPractice\IsoPractice.Build.cs">
       <Filter>Source\IsoPractice</Filter>
     </None>
@@ -44,6 +50,9 @@
     <Filter Include="Source\IsoPractice\Private\Items">
       <UniqueIdentifier>{A9747006-5D8E-3877-B253-140406F9B94E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\IsoPractice\Private\Items\A_Item_Key.cpp">
+      <Filter>Source\IsoPractice\Private\Items</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\IsoPractice\Private\Items\Item.cpp">
       <Filter>Source\IsoPractice\Private\Items</Filter>
     </ClCompile>
@@ -53,13 +62,11 @@
     <Filter Include="Source\IsoPractice\Public\Items">
       <UniqueIdentifier>{5532FC5F-3D91-388D-A83E-8C01B7BCE4D2}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\IsoPractice\Public\Items\Item.h">
+    <ClInclude Include="..\..\Source\IsoPractice\Public\Items\A_Item_Key.h">
       <Filter>Source\IsoPractice\Public\Items</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\IsoPractice\DebugMacros.h">
-      <Filter>Source\IsoPractice</Filter>
+    <ClInclude Include="..\..\Source\IsoPractice\Public\Items\Item.h">
+      <Filter>Source\IsoPractice\Public\Items</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

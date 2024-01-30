@@ -18,6 +18,11 @@ AItem::AItem()
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
+	int32 AvgInt32 = Avg<int32>(1, 3);
+	UE_LOG(LogTemp, Warning, TEXT("AvgInt32=%d"), AvgInt32);
+
+	float AvgFloat64 = Avg<float>(3.45f, 7.86f);
+	UE_LOG(LogTemp, Warning, TEXT("AvgFloat=%f"), AvgFloat64);
 	//UE_LOG(LogTemp, Warning, TEXT("BeginPlay in Item.cpp"));
 	
 	//SetActorLocation(FVector(0.f, 0.f, 10.f));
@@ -39,17 +44,57 @@ void AItem::Tick(float DeltaTime)
 
 	RunningTime += DeltaTime;
 	
-	float DeltaZ = Amplitude * FMath::Sin(RunningTime * TimeConstant);
+	float DeltaX = TransformedSin();
+	float DeltaY = TransformedCos();
 
 	if (GetWorld()) {
-		GEngine->AddOnScreenDebugMessage(1, -1.f, FColor::White, FString::Printf(TEXT("DeltaTime=%f RunningTime=%f DeltaZ=%f"), DeltaTime, RunningTime, DeltaZ));
+		GEngine->AddOnScreenDebugMessage(1, -1.f, FColor::White, FString::Printf(
+			TEXT("DeltaTime=%f RunningTime=%f DeltaX=%f DeltaY=%f RotationDebugLineDegres=%f"), 
+			DeltaTime, 
+			RunningTime, 
+			DeltaX, 
+			DeltaY,
+			RotationDebugLineDegres
+		));
 	}
 	
-	AddActorWorldOffset(FVector(0.f, 0.f, DeltaZ));
+	AddActorWorldOffset(FVector(DeltaX, DeltaY, 0.f));
+	AddActorWorldRotation(FRotator(GetRotationDebugLineDegres(), -GetRotationDebugLineDegres(), 0.f));
 	DRAW_SPHERE(GetActorLocation());
-	//DRAW_VECTOR(GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 2.f, 1);
+	DRAW_VECTOR(GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 0.1f, 1);
 
+
+	FVector AvgFVector = Avg<FVector>(GetActorLocation(), FVector::ZeroVector);
+	DRAW_POINT(AvgFVector);
+}
+
+
+float AItem::TransformedSin()
+{
+	return Amplitude * FMath::Sin(RunningTime * TimeConstant);
+}
+
+
+float AItem::TransformedCos()
+{
+	return Amplitude * FMath::Cos(RunningTime * TimeConstant);
 }
 
 
 
+float AItem::GetRotationDebugLineDegres()
+{
+	RotationDebugLineDegres += .5f * RunningTime;
+	if (RotationDebugLineDegres > 360.f) {
+		RotationDebugLineDegres = 0.f;
+	}
+
+	return RotationDebugLineDegres;
+}
+
+
+template<typename T> 
+inline T AItem::Avg(T First, T Second)
+{
+	return (First + Second) / 2;
+}

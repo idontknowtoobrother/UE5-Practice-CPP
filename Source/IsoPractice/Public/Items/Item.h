@@ -19,12 +19,24 @@ public:
 
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-private:
-	UPROPERTY(VisibleInstanceOnly) // UPROPERTY NOT EDITABLE view only
-	float RunningTime;
-	UPROPERTY(EditAnywhere, Category = "Item") // UPROPERTY EDIT Actor on default only
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters") // UPROPERTY EDIT Actor on default only
 	float Amplitude = 0.25f;
-	UPROPERTY(EditInstanceOnly, Category = "Item") // UPROPERTY EDIT Actor each actor not default
+	virtual void BeginPlay() override;
+	UFUNCTION(BlueprintCallable)
+	float TransformedSin();
+	UFUNCTION(BlueprintPure)
+	float TransformedCos();
+
+	float GetRotationDebugLineDegres();
+
+	template<typename T>
+	T Avg(T First, T Second);
+
+private:
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true")) 
+	float RunningTime;
+	UPROPERTY(EditInstanceOnly, Category = "Sine Parameters") // UPROPERTY EDIT Actor each actor not default
 	float TimeConstant = 5.f;
+
+	float RotationDebugLineDegres = 0.f;
 };

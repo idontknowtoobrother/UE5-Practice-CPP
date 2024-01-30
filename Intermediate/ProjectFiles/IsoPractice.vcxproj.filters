@@ -53,6 +53,9 @@
     <ClCompile Include="..\..\Source\IsoPractice\Private\Items\A_Item_Key.cpp">
       <Filter>Source\IsoPractice\Private\Items</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\IsoPractice\Private\Items\ComponentCPP.cpp">
+      <Filter>Source\IsoPractice\Private\Items</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\IsoPractice\Private\Items\Item.cpp">
       <Filter>Source\IsoPractice\Private\Items</Filter>
     </ClCompile>
@@ -63,6 +66,9 @@
       <UniqueIdentifier>{5532FC5F-3D91-388D-A83E-8C01B7BCE4D2}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\IsoPractice\Public\Items\A_Item_Key.h">
+      <Filter>Source\IsoPractice\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\IsoPractice\Public\Items\ComponentCPP.h">
       <Filter>Source\IsoPractice\Public\Items</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\IsoPractice\Public\Items\Item.h">

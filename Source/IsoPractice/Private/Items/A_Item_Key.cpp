@@ -27,6 +27,25 @@ void AA_Item_Key::Tick(float DeltaTime)
 	GEngine->AddOnScreenDebugMessage(1, -1.f, FColor::White, FString::Printf(TEXT("RunningTime=%f"), RunningTime));
 
 
-	DRAW_SPHERE(GetActorLocation());
+	MakeActorMoveLikeMJ();
+	DRAW_SPHERE(GetActorLocation())
 }
 
+
+float AA_Item_Key::TransformedSin()
+{
+	return Amplitude * FMath::Sin(RunningTime * TimeConstant);
+}
+
+float AA_Item_Key::TransformedCos()
+{
+	return Amplitude * FMath::Cos(RunningTime * TimeConstant);
+}
+
+void AA_Item_Key::MakeActorMoveLikeMJ()
+{
+	float DeltaX = TransformedSin();
+	float DeltaY = TransformedCos();
+
+	AddActorWorldOffset(FVector(DeltaX, DeltaY, 0.f));
+}

@@ -59,13 +59,13 @@ void AItem::Tick(float DeltaTime)
 	}
 	
 	AddActorWorldOffset(FVector(DeltaX, DeltaY, 0.f));
-	AddActorWorldRotation(FRotator(GetRotationDebugLineDegres(), -GetRotationDebugLineDegres(), 0.f));
+	//AddActorWorldRotation(FRotator(GetRotationDebugLineDegres(), -GetRotationDebugLineDegres(), 0.f));
 	DRAW_SPHERE(GetActorLocation());
 	DRAW_VECTOR(GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 0.1f, 1);
 
 
 	FVector AvgFVector = Avg<FVector>(GetActorLocation(), FVector::ZeroVector);
-	DRAW_POINT(AvgFVector);
+	DRAW_POINT(AvgFVector)
 }
 
 
@@ -84,7 +84,7 @@ float AItem::TransformedCos()
 
 float AItem::GetRotationDebugLineDegres()
 {
-	RotationDebugLineDegres += .5f * RunningTime;
+	RotationDebugLineDegres += .005f * RunningTime;
 	if (RotationDebugLineDegres > 360.f) {
 		RotationDebugLineDegres = 0.f;
 	}

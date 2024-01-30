@@ -59,6 +59,12 @@
     <ClCompile Include="..\..\Source\IsoPractice\Private\Items\Item.cpp">
       <Filter>Source\IsoPractice\Private\Items</Filter>
     </ClCompile>
+    <Filter Include="Source\IsoPractice\Private\Pawn">
+      <UniqueIdentifier>{040E081F-60AB-33F2-B862-E3D254B84B71}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IsoPractice\Private\Pawn\Dragon.cpp">
+      <Filter>Source\IsoPractice\Private\Pawn</Filter>
+    </ClCompile>
     <Filter Include="Source\IsoPractice\Public">
       <UniqueIdentifier>{EFFD6AE1-067A-3CB3-BFA2-AB55E79CCF70}</UniqueIdentifier>
     </Filter>
@@ -74,5 +80,14 @@
     <ClInclude Include="..\..\Source\IsoPractice\Public\Items\Item.h">
       <Filter>Source\IsoPractice\Public\Items</Filter>
     </ClInclude>
+    <Filter Include="Source\IsoPractice\Public\Pawn">
+      <UniqueIdentifier>{025EA2F9-BCBD-33BF-A166-B192FC0D3BE6}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IsoPractice\Public\Pawn\Dragon.h">
+      <Filter>Source\IsoPractice\Public\Pawn</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\IsoPractice\Private\Pawns\.cpp" />
   </ItemGroup>
 </Project>

@@ -51,7 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeDragon() {}
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADragon_Statics::NewProp_Capsule_MetaData[] = {
-		{ "Category", "Dragon" },
+		{ "Category", "Capsule Component Item" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Pawn/Dragon.h" },
 	};
@@ -98,9 +98,9 @@ void EmptyLinkFunctionForGeneratedCodeDragon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ADragon, ADragon::StaticClass, TEXT("ADragon"), &Z_Registration_Info_UClass_ADragon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADragon), 2671255878U) },
+		{ Z_Construct_UClass_ADragon, ADragon::StaticClass, TEXT("ADragon"), &Z_Registration_Info_UClass_ADragon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADragon), 586573713U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_3411506208(TEXT("/Script/IsoPractice"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_1777119689(TEXT("/Script/IsoPractice"),
 		Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

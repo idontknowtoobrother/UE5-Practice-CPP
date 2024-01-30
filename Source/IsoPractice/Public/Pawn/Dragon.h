@@ -28,7 +28,7 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Capsule Component Item")
 	UCapsuleComponent* Capsule;
 	
 };

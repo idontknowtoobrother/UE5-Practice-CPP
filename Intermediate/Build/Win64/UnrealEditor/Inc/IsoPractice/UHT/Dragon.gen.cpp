@@ -10,7 +10,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeDragon() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ISOPRACTICE_API UClass* Z_Construct_UClass_ADragon();
 	ISOPRACTICE_API UClass* Z_Construct_UClass_ADragon_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_IsoPractice();
@@ -33,6 +36,18 @@ void EmptyLinkFunctionForGeneratedCodeDragon() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Capsule_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Capsule;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DragonMesh_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DragonMesh;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoomCamera_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BoomCamera;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ViewCamera_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ViewCamera;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -51,14 +66,41 @@ void EmptyLinkFunctionForGeneratedCodeDragon() {}
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADragon_Statics::NewProp_Capsule_MetaData[] = {
-		{ "Category", "Capsule Component Item" },
+		{ "Category", "Capsule Item" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Pawn/Dragon.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADragon_Statics::NewProp_Capsule = { "Capsule", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADragon, Capsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADragon_Statics::NewProp_Capsule_MetaData), Z_Construct_UClass_ADragon_Statics::NewProp_Capsule_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADragon_Statics::NewProp_DragonMesh_MetaData[] = {
+		{ "Category", "Capsule Item" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Pawn/Dragon.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADragon_Statics::NewProp_DragonMesh = { "DragonMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADragon, DragonMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADragon_Statics::NewProp_DragonMesh_MetaData), Z_Construct_UClass_ADragon_Statics::NewProp_DragonMesh_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADragon_Statics::NewProp_BoomCamera_MetaData[] = {
+		{ "Category", "Dragon" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Pawn/Dragon.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADragon_Statics::NewProp_BoomCamera = { "BoomCamera", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADragon, BoomCamera), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADragon_Statics::NewProp_BoomCamera_MetaData), Z_Construct_UClass_ADragon_Statics::NewProp_BoomCamera_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADragon_Statics::NewProp_ViewCamera_MetaData[] = {
+		{ "Category", "Dragon" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Pawn/Dragon.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADragon_Statics::NewProp_ViewCamera = { "ViewCamera", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADragon, ViewCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADragon_Statics::NewProp_ViewCamera_MetaData), Z_Construct_UClass_ADragon_Statics::NewProp_ViewCamera_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADragon_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADragon_Statics::NewProp_Capsule,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADragon_Statics::NewProp_DragonMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADragon_Statics::NewProp_BoomCamera,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADragon_Statics::NewProp_ViewCamera,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ADragon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ADragon>::IsAbstract,
@@ -98,9 +140,9 @@ void EmptyLinkFunctionForGeneratedCodeDragon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ADragon, ADragon::StaticClass, TEXT("ADragon"), &Z_Registration_Info_UClass_ADragon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADragon), 586573713U) },
+		{ Z_Construct_UClass_ADragon, ADragon::StaticClass, TEXT("ADragon"), &Z_Registration_Info_UClass_ADragon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADragon), 1162238976U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_1777119689(TEXT("/Script/IsoPractice"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_980550017(TEXT("/Script/IsoPractice"),
 		Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID___Game_Dev___IsoPractice_Source_IsoPractice_Public_Pawn_Dragon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

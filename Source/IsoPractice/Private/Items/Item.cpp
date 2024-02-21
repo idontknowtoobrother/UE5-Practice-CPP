@@ -47,16 +47,16 @@ void AItem::Tick(float DeltaTime)
 	float DeltaX = TransformedSin();
 	float DeltaY = TransformedCos();
 
-	if (GetWorld()) {
-		GEngine->AddOnScreenDebugMessage(1, -1.f, FColor::White, FString::Printf(
-			TEXT("DeltaTime=%f RunningTime=%f DeltaX=%f DeltaY=%f RotationDebugLineDegres=%f"), 
-			DeltaTime, 
-			RunningTime, 
-			DeltaX, 
-			DeltaY,
-			RotationDebugLineDegres
-		));
-	}
+	//if (GetWorld()) {
+	//	GEngine->AddOnScreenDebugMessage(1, -1.f, FColor::White, FString::Printf(
+	//		TEXT("DeltaTime=%f RunningTime=%f DeltaX=%f DeltaY=%f RotationDebugLineDegres=%f"), 
+	//		DeltaTime, 
+	//		RunningTime, 
+	//		DeltaX, 
+	//		DeltaY,
+	//		RotationDebugLineDegres
+	//	));
+	//}
 	
 	AddActorWorldOffset(FVector(DeltaX, DeltaY, 0.f));
 	//AddActorWorldRotation(FRotator(GetRotationDebugLineDegres(), -GetRotationDebugLineDegres(), 0.f));

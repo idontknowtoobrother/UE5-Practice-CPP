@@ -7,6 +7,9 @@
 #include "Dragon.generated.h"
 
 class UCapsuleComponent;
+class USkeletalMeshComponent;
+class USpringArmComponent;
+class UCameraComponent;
 
 UCLASS()
 class ISOPRACTICE_API ADragon : public APawn
@@ -26,9 +29,20 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	void MoveForward(float Value);
+	void Turn(float Value);
+	void LookUp(float Value);
 
 private:
-	UPROPERTY(VisibleAnywhere, Category = "Capsule Component Item")
+	UPROPERTY(VisibleAnywhere, Category = "Capsule Item")
 	UCapsuleComponent* Capsule;
-	
+
+	UPROPERTY(VisibleAnywhere, Category = "Capsule Item")
+	USkeletalMeshComponent* DragonMesh;
+
+	UPROPERTY(VisibleAnywhere)
+	USpringArmComponent* BoomCamera;
+
+	UPROPERTY(VisibleAnywhere)
+	UCameraComponent* ViewCamera;
 };
